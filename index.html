@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <script src="main.js" type="text/javascript"></script>
 </head>
 <body>
+
+    <div class="wrapper">
+        <div class="container">
+            <h1>Rock Paper Scissors</h1>
+            <div class="scoreboard">
+                <div id="user-label" class="badge">Away Team</div>
+                <div id="computer-label" class="badge">Home Team</div>
+                <span id="user-score">0</span>:<span id="computer-score">0</span>
+            </div>
+            <p>Choose your fighter</p>
+            <div class="choices">
+                <div class="button" id="rock">
+                    Rock
+                </div>
+                <div class="button" id="paper">
+                    Paper
+                </div>
+                <div class="button" id="scissors">
+                    Scissors
+                </div>
+            </div>
+            <div id="action-message">Make your move</div>
+            <div class="reset button">
+                Reset
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>
