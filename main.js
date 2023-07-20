@@ -49,6 +49,9 @@ const rps_game = () => {
     const scoreBoard = baseElement.querySelector('#scoreboard');
     const resultMessage = baseElement.querySelector('#result-message');
 
+    const home_score = scoreBoard.querySelector('#computer-score');
+    const away_score = scoreBoard.querySelector('#user-score');
+
     const messageReset = () => {
         resultMessage.textContent = "";
     };
@@ -61,17 +64,59 @@ const rps_game = () => {
         resultMessage.appendChild(resultElement);
     };
 
+    const displayChoiceIcon = (choice, player) => {
+        const iconClassMap = {
+            user: {
+                rock: 'fas fa-hand-rock fa-rotate-90',
+                paper: 'fas fa-hand-paper fa-rotate-90',
+                scissors: 'fas fa-hand-scissors fa-flip-horizontal'
+            },
+            computer: {
+                rock: 'fas fa-hand-rock fa-rotate-270',
+                paper: 'fas fa-hand-paper fa-rotate-270',
+                scissors: 'fas fa-hand-scissors'
+            }
+        };
+        const icon = document.getElementById(`${player}-choice`);
+        icon.classList = iconClassMap[player][choice];
+    };
+
     baseElement.addEventListener('click', (e) => {
         const choices = ['rock', 'paper', 'scissors'];
         const delegatedElement = e.target.closest('div');
-        messageReset();
 
-        if (choices.includes(delegatedElement.id)) {
+        if (choices.includes(delegatedElement?.id)) {
+            messageReset();
             const playerSelection = delegatedElement.id;
+            displayChoiceIcon(playerSelection, 'user');
+
             const computerSelection = getComputerChoice();
+            displayChoiceIcon(computerSelection, 'computer');
+
             const result = playRound(playerSelection, computerSelection);
 
             displayResultMessage(result);
+
+            if (result.includes('win')) {
+                away_score.textContent = parseInt(away_score.textContent) + 1;
+                away_score.classList.add('win');
+
+                setTimeout(() => {
+                    away_score.classList.remove('win');
+                }, 1000);
+
+            } else if (result.includes('lose')) {
+                home_score.textContent = parseInt(home_score.textContent) + 1;
+                home_score.classList.add('win');
+
+                setTimeout(() => {
+                    home_score.classList.remove('win');
+                }, 1000);
+
+            } else {
+                return;
+            }
+
         }
     });
 

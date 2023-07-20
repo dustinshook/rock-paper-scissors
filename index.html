@@ -16,20 +16,26 @@
         </nav>
     </div>
 
-    <main class="page-content">
+    <main id="game" class="page-content">
 
         <div id="scoreboard" class="scoreboard-wrapper">
             <div id="away" class="score">
                 <div id="user-label" class="badge">Away Team</div>
                 <div class="score-num-wrapper">
-                    <span id="user-score">0</span>
+                    <span id="user-score" class="game-score">0</span>
+                </div>
+                <div class="choice-icon">
+                    <i id="user-choice" class="fas fa-question"></i>
                 </div>
             </div>
             <div id="home" class="score">
                 <div id="computer-label" class="badge">Home Team</div>
                 <div class="score-num-wrapper">
-                    <span id="computer-score">0</span>
+                    <span id="computer-score" class="game-score">0</span>
                 </div>
+                <span class="choice-icon">
+                    <i id="computer-choice" class="fas fa-question"></i>
+                </span>
             </div>
         </div>
         <div class="choices-wrapper">
@@ -47,10 +53,22 @@
             </div>
         </div>
         <div id="result-message" class="action-message-wrapper"></div>
-        <div class="reset-wrapper"></div>
+        <div class="reset-wrapper">
+            <div class="button" id="reset">
+                <i class="fas fa-undo fa-3x"></i>
+            </div>
+        </div>
 
 
     </main>
+
+    <div id="game-over" style="display: none;">
+        <h1>Game Over</h1>
+        <p id="game-over-message"></p>
+        <div class="button" id="restart">
+            <i class="fas fa-redo fa-3x"></i>
+        </div>
+    </div>
     <script src="main.js" type="text/javascript"></script>
 </body>
 </html>
