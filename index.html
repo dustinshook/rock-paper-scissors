@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <script src="main.js" type="text/javascript"></script>
 </head>
 <body id="rps-body" class="page-wrapper">
     <div class="page-header">
@@ -19,7 +18,7 @@
 
     <main class="page-content">
 
-        <div class="scoreboard-wrapper">
+        <div id="scoreboard" class="scoreboard-wrapper">
             <div id="away" class="score">
                 <div id="user-label" class="badge">Away Team</div>
                 <div class="score-num-wrapper">
@@ -36,10 +35,8 @@
         <div class="choices-wrapper">
             <h1>Choose your fighter</h1>
             <div class="choices">
-                <div class="choice-wrap">
-                    <div class="button" id="rock">
-                        <i class="fas fa-hand-rock fa-5x"></i>
-                    </div>
+                <div class="button" id="rock">
+                    <i class="fas fa-hand-rock fa-5x fa-rotate-90"></i>
                 </div>
                 <div class="button" id="paper">
                     <i class="fas fa-hand-paper fa-5x"></i>
@@ -49,38 +46,11 @@
                 </div>
             </div>
         </div>
-        <div class="action-message-wrapper"></div>
+        <div id="result-message" class="action-message-wrapper"></div>
         <div class="reset-wrapper"></div>
 
 
     </main>
-
-    <!-- <div class="wrapper">
-        <div class="container">
-            <h1>Rock Paper Scissors</h1>
-            <div class="scoreboard">
-                <div id="user-label" class="badge">Away Team</div>
-                <div id="computer-label" class="badge">Home Team</div>
-                <span id="user-score">0</span>:<span id="computer-score">0</span>
-            </div>
-            <p>Choose your fighter</p>
-            <div class="choices">
-                <div class="button" id="rock">
-                    <i class="fas fa-hand-rock"></i>
-                </div>
-                <div class="button" id="paper">
-                    <i class="fas fa-hand-paper"></i>
-                </div>
-                <div class="button" id="scissors">
-                    <i class="fas fa-hand-scissors"></i>
-                </div>
-            </div>
-            <div id="action-message">Make your move</div>
-            <div class="reset button">
-                <i class="fas fa-sync"></i>
-            </div>
-        </div>
-    </div> -->
-    
+    <script src="main.js" type="text/javascript"></script>
 </body>
 </html>

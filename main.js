@@ -44,27 +44,37 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-/* function game() {
-    let playerScore = 0;
-    let computerScore = 0;
+const rps_game = () => {
+    const baseElement = document.querySelector('#rps-body');
+    const scoreBoard = baseElement.querySelector('#scoreboard');
+    const resultMessage = baseElement.querySelector('#result-message');
 
-    for (let i = 0; i < 5; i++) {
-        const result = playRound(getPlayerChoice(), getComputerChoice());
+    const messageReset = () => {
+        resultMessage.textContent = "";
+    };
 
-        if (result.includes('win')) playerScore++;
-        if (result.includes('lose')) computerScore++;
-        if (result.includes('tie')) i--;
+    const displayResultMessage = (result) => {
+        const resultElement = document.createElement('h1');
+        resultElement.textContent = result;
+        resultElement.classList.toggle('result');
 
-        console.log(result);
-    }
+        resultMessage.appendChild(resultElement);
+    };
 
-    if (playerScore > computerScore) {
-        console.log(`You win! ${playerScore} to ${computerScore}`);
-    } else if (computerScore > playerScore) {
-        console.log(`You lose! ${computerScore} to ${playerScore}`);
-    } else {
-        console.log(`It's a tie! ${playerScore} to ${computerScore}`);
-    }
-}
+    baseElement.addEventListener('click', (e) => {
+        const choices = ['rock', 'paper', 'scissors'];
+        const delegatedElement = e.target.closest('div');
+        messageReset();
 
-game(); */
+        if (choices.includes(delegatedElement.id)) {
+            const playerSelection = delegatedElement.id;
+            const computerSelection = getComputerChoice();
+            const result = playRound(playerSelection, computerSelection);
+
+            displayResultMessage(result);
+        }
+    });
+
+};
+
+rps_game();

@@ -27,11 +27,16 @@ nav {
     z-index: 100;
     top: 0;
     border-bottom: 1px solid #ffffff05;
+    cursor: pointer;
 }
 
 nav h1 {
     font-size: 2.5rem;
     margin-right: auto;
+}
+
+nav h1:hover {
+    color: #dca11d;
 }
 
 .page-content {
@@ -106,4 +111,13 @@ nav h1 {
 
 .reset.button:hover {
     background: #18db69;
+}
+
+.action-message-wrapper {
+    margin-top: 2em;
+    transition: 0.3s;
+}
+
+.action-message-wrapper.result {
+    transform: scale(2);
 }
