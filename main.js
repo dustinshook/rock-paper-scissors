@@ -45,9 +45,10 @@ function playRound(playerSelection, computerSelection) {
 }
 
 const rps_game = () => {
-    const baseElement = document.querySelector('#rps-body');
+    const baseElement = document.querySelector('#game');
     const scoreBoard = baseElement.querySelector('#scoreboard');
     const resultMessage = baseElement.querySelector('#result-message');
+    const endGameElement = document.querySelector('#game-over');
 
     const home_score = scoreBoard.querySelector('#computer-score');
     const away_score = scoreBoard.querySelector('#user-score');
@@ -117,9 +118,40 @@ const rps_game = () => {
                 return;
             }
 
+            let home_score_count = parseInt(home_score.textContent);
+            let away_score_count = parseInt(away_score.textContent);
+
+            if (home_score_count == '5') {
+                baseElement.classList.toggle('hidden');
+                endGameElement.classList.toggle('hidden');
+
+                endGameElement.querySelector('#game-over-message').textContent = `You lost! ${away_score_count} - ${home_score_count}`;
+            } else if (away_score.textContent === '5') {
+                baseElement.classList.toggle('hidden');
+                endGameElement.classList.toggle('hidden');
+
+                endGameElement.querySelector('#game-over-message').textContent = `You won! ${away_score_count} - ${home_score_count}`;
+            } else {
+                return;
+            }
+
         }
     });
 
 };
 
-rps_game();
+const landingPage = document.querySelector('#landing');
+const restartButton = document.querySelector('#restart-game');
+
+landingPage.addEventListener('click', (e) => {
+    if (e.target.id === 'start-game') {
+        landingPage.classList.toggle('hidden');
+        document.querySelector('#game').classList.toggle('hidden');
+        rps_game();
+    }
+});
+
+restartButton.addEventListener('click', () => {
+    // RELAOD PAGE
+    location.reload();
+});
