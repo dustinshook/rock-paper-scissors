@@ -10,6 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body id="rps-body" class="page-wrapper">
+
+    <audio id="game-start-sound" src="sounds/game-start-6104.mp3" type="audio/mp3"></audio>
+    <audio id="game-win-sound" src="sounds/retro-video-game-coin-pickup-38299.mp3" type="audio/mp3"></audio>
+    <audio id="game-lose-sound" src="sounds/hurt_c_08-102842.mp3" type="audio/mp3"></audio>
+    <audio id="game-tie-sound" src="sounds/retro-game-shot-152052.mp3" type="audio/mp3"></audio>
+    <audio id="game-over-win-sound" src="sounds/winsquare-6993.mp3" type="audio/mp3"></audio>
+    <audio id="game-over-sound" src="sounds/videogame-death-sound-43894.mp3" type="audio/mp3"></audio>
+
     <div id="landing" class="landing-page">
         <div class="landing-title">
             <span class="landing-word">Rock</span>
@@ -25,7 +33,7 @@
 
         <div id="scoreboard" class="scoreboard-wrapper">
             <div id="away" class="score">
-                <div id="user-label" class="badge">Away Team</div>
+                <div id="user-label" class="badge"><i class="fas fa-user"></i></div>
                 <div class="score-num-wrapper">
                     <span id="user-score" class="game-score">0</span>
                 </div>
@@ -34,7 +42,7 @@
                 </div>
             </div>
             <div id="home" class="score">
-                <div id="computer-label" class="badge">Home Team</div>
+                <div id="computer-label" class="badge"><i class="fas fa-robot"></i></div>
                 <div class="score-num-wrapper">
                     <span id="computer-score" class="game-score">0</span>
                 </div>
@@ -43,8 +51,11 @@
                 </span>
             </div>
         </div>
+
+        <div id="action-message" class="action-message-wrapper">Choose your fighter<span class="dots">..</span>
+        </div>
+
         <div class="choices-wrapper">
-            <h1>Choose your fighter</h1>
             <div class="choices">
                 <div class="button" id="rock">
                     <i class="fas fa-hand-rock fa-5x fa-rotate-90"></i>
@@ -57,9 +68,8 @@
                 </div>
             </div>
         </div>
+
         <div id="result-message" class="action-message-wrapper"></div>
-
-
     </main>
 
     <div id="game-over" class="hidden landing-page">
@@ -72,6 +82,13 @@
             Rematch
         </div>
     </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>
+                Sound Effects from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=38299">Pixabay</a>
+            </p>
+        </div>
     <script src="main.js" type="text/javascript"></script>
 </body>
+
 </html>
