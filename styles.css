@@ -27,7 +27,7 @@ body {
     margin-top: -2em;
 }
 
-.landing-word:hover {
+.pallet-highlight:hover {
     color: #dca11d;
     transition: 0.3s;
 }
@@ -58,7 +58,7 @@ body {
     font-size: 2.5rem;
     background-color: #2a2c30;
     box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.15);
-    margin-top: 2em;
+    margin-top: 0.5em;
     min-width: 0px;
 
 }
@@ -208,7 +208,7 @@ footer a {
     }
 
     .action-message-wrapper {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     .choices {
